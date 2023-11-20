@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
+  <Extern href="stdidcmd.h"/>
+  <!--This header contains the command ids for the menus provided by the shell. -->
+  <Extern href="vsshlids.h"/>
+  <Include href="KnownImageIds.vsct"/>
+  <Commands package="guidPropertiesToolWindowPackage">
+    <Buttons>
+      <!--To define a menu group you have to specify its ID, the parent menu and its display priority.
+          The command is visible and enabled by default. If you need to change the visibility, status, etc, you can use
+          the CommandFlag node.
+          You can add more than one CommandFlag node e.g.:
+              <CommandFlag>DefaultInvisible</CommandFlag>
+              <CommandFlag>DynamicVisibility</CommandFlag>
+          If you do not want an image next to your command, remove the Icon node /> -->
+      <Button guid="guidPropertiesToolWindowPackageCmdSet" id="ToolWindowCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1"/>
+        <Icon guid="ImageCatalogGuid" id="ListProperty" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Automation Properties</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+  <KeyBindings>
+    <KeyBinding guid="guidPropertiesToolWindowPackageCmdSet" id="ToolWindowCommandId" editor="guidVSStd97" key1="VK_F2" mod1="Shift">
+    </KeyBinding>
+  </KeyBindings>
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidPropertiesToolWindowPackage" value="{8e6f82bf-a6d4-45a1-9f3a-3491d95dd601}" />
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="guidPropertiesToolWindowPackageCmdSet" value="{7f78ef71-513e-4a58-a062-67c961d628f5}">
+      <IDSymbol name="ToolWindowCommandId" value="0x0100" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>

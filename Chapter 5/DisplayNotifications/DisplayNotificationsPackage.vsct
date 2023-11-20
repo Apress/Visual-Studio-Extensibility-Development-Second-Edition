@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
+  <Extern href="stdidcmd.h"/>
+  <!--This header contains the command ids for the menus provided by the shell. -->
+  <Extern href="vsshlids.h"/>
+  <Include href="KnownImageIds.vsct"/>
+  <Commands package="guidDisplayNotificationsPackage">
+    <Buttons>
+      <Button guid="guidDisplayNotificationsPackageCmdSet" id="NotificationToolWindowCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1"/>
+        <!--<Icon guid="ImageCatalogGuid" id="NotificationAlert"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>-->
+        <Strings>
+          <ButtonText>Display Notifications</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+  <KeyBindings>
+    <KeyBinding guid="guidDisplayNotificationsPackageCmdSet" id="NotificationToolWindowCommandId" editor="guidVSStd97" 
+                key1="VK_F5" mod1="Control"></KeyBinding>
+  </KeyBindings>
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidDisplayNotificationsPackage" value="{131ca5cd-ca59-45ba-b97d-db4be15fe841}" />
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="guidDisplayNotificationsPackageCmdSet" value="{9ffca492-ec05-4786-8e91-b2972eb5db44}">
+      <IDSymbol name="NotificationToolWindowCommandId" value="0x0100" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>

@@ -1,0 +1,12 @@
+{
+  "Book": {
+    "Name": "Visual Studio Extensibility Development",
+    "Subject": "Technology",
+    "Publisher": "Apress",
+    "Inspiration": "Mads Kristensen",
+    "Pages": 400,
+    "ChapterCount": 10,
+    "Year": 2023
+    "Author": "Rishabh Verma"
+  }
+}

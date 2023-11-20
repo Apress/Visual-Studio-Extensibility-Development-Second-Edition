@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
+  <Extern href="stdidcmd.h"/>
+  <!--This header contains the command ids for the menus provided by the shell. -->
+  <Extern href="vsshlids.h"/>
+  <Include href="KnownImageIds.vsct"/>
+  <Commands package="guidJsonToCSharpCodeGenerationPackage">
+    <Groups>
+      <Group guid="guidJsonToCSharpCodeGenerationPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_ITEMNODE" />
+      </Group>
+    </Groups>
+    <Buttons>
+      <Button guid="guidJsonToCSharpCodeGenerationPackageCmdSet" id="ApplyCodeGenerationCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidJsonToCSharpCodeGenerationPackageCmdSet" id="MyMenuGroup" />
+        <Icon guid="ImageCatalogGuid" id="GenerateFile" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Generate C# class</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+  <VisibilityConstraints>
+    <VisibilityItem guid="guidJsonToCSharpCodeGenerationPackageCmdSet" id="ApplyCodeGenerationCommandId" 
+                    context="guidVisibilityContext"/>
+  </VisibilityConstraints>
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidJsonToCSharpCodeGenerationPackage" value="{4fe18284-0dbd-4936-9f6e-3ff7304dc7c2}" />
+    <GuidSymbol name="guidVisibilityContext" value="{878bc455-61ba-459b-b18d-6922cde6ce19}"/>
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="guidJsonToCSharpCodeGenerationPackageCmdSet" value="{78327699-c6b2-4daf-a7d1-2877b33b9288}">
+      <IDSymbol name="MyMenuGroup" value="0x1020" />
+      <IDSymbol name="ApplyCodeGenerationCommandId" value="0x0100" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
